@@ -12,6 +12,9 @@
      var that = this;
      var query = loaderUtils.parseQuery(this.query);
      var async = (typeof(query.async) !== 'undefined') ? query.async: true;
+     if (query.cacheable) {
+         this.cacheable();
+     }
 
      try {
          content = _eval(content);
